@@ -11,7 +11,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Benchmarking Electrodes for BioImpedance and Body-Coupled Communication\\
+\title{Electrodes for BioImpedance and Body-Coupled Communication\\
 
 \thanks{Sustronics something-something}
 }
@@ -50,12 +50,99 @@ email address or ORCID}
 \maketitle
 
 
+
+
 \input{sections/000_introduction.tex}
-\input{sections/010_materials_and_methodes.tex}
-\input{sections/020_experimental_design.tex}
-\input{sections/030_results.tex}
-\input{sections/040_discussion.tex}
-\input{sections/050_conclusion.tex}
+\input{sections/001_emperical_analysis}
+\section{Materials and Methods}
+\subsection{Electrode Types}
+\begin{itemize}
+    \item Classical Ag/AgCl (Silver/Silver Chloride) disposable electrodes are a staple in electrophysiological measurements, especially in electrocardiography (ECG) applications. These electrodes are known for their excellent electrical conductivity and stable electrochemical properties, which make them highly suitable for capturing high-fidelity cardiac signals. The Ag/AgCl electrode consists of a silver base coated with silver chloride, which acts as an interface between the electrode and the skin. This interface facilitates the transduction of ionic current in the body to electronic current in the electrode system, enabling accurate signal acquisition.
+
+\subsubsection{Construction and Material Properties}
+The core advantage of Ag/AgCl electrodes lies in their construction and material properties. Silver offers low resistance and, when combined with silver chloride, provides a low-noise, high-quality contact with the skin. This results in minimal signal distortion and attenuation, making these electrodes highly effective for capturing subtle electrophysiological signals.
+
+\subsubsection{Application in ECG}
+In ECG applications, the fidelity of the heart's electrical signals is paramount. Ag/AgCl disposable electrodes are designed to provide a quick, reliable, and hygienic method for capturing these signals. Their disposable nature ensures that cross-contamination risks are minimized, making them ideal for clinical settings where patient safety and hygiene are top priorities.
+
+\subsubsection{Limitations}
+Despite their widespread use and advantages, classical Ag/AgCl disposable electrodes have limitations. Their disposable nature, while beneficial for hygiene, contributes to ongoing costs and environmental waste. Additionally, the performance of these electrodes can be affected by factors such as skin preparation, electrode placement, and the presence of movement artifacts.
+
+\subsubsection{Summary}
+In summary, classical Ag/AgCl disposable electrodes represent a benchmark in ECG measurement, offering a balance between signal quality, ease of use, and hygiene. However, the exploration of alternative electrode materials and designs, such as gold-plated copper electrodes and carbon-printed electrodes, reflects ongoing efforts to address the limitations of Ag/AgCl electrodes, particularly in terms of reusability, cost-effectiveness, and environmental impact.
+
+    \item Ag/AgCl electrodes on hydrogel base
+    \item Custom-made gold-plated copper electrodes on flexible PCB
+    \item Custom-made carbon-printed electrodes
+\end{itemize}
+
+\section{Measurement Scenarios}
+    This section outlines the various scenarios under which the electrodes were tested, highlighting the specific applications and the technical parameters used to evaluate their performance.
+    
+    \subsection{Classical ECG Measurement}
+        Classical Electrocardiography (ECG) measurement serves as a fundamental scenario for evaluating electrode performance. ECG involves recording the electrical activity of the heart over a period through electrodes placed on the skin. The quality of ECG signals is critical for diagnosing various cardiac conditions, making it a pivotal application for assessing electrode efficacy. In this study, we evaluate the electrodes' Signal-to-Noise Ratio (SNR), settling time, and susceptibility to movement artifacts during ECG recording to determine their suitability for capturing accurate and reliable cardiac signals.
+
+\subsection{BioZ Pneumography and BCC Use-Case}
+    % Add similar subsections for BioZ Pneumography and BCC Use-Case scenarios
+
+\section{Performance Evaluation Parameters}
+    This section details the metrics used to quantitatively assess electrode performance across different measurement scenarios.
+    
+    \subsection{Signal-to-Noise Ratio (SNR)}
+        % Description of how SNR is calculated and its significance in evaluating electrode performance.
+        
+    \subsection{Settling Time}
+        % Explanation of settling time measurement and its relevance to electrode performance.
+        
+    \subsection{Chip Error Rate (CER) for BCC Application}
+        % Details on how CER is measured, specifically in the context of BCC applications, and its impact on data transmission reliability.
+        
+    \subsection{Movement Artifacts}
+        % Proposal for quantitatively measuring movement artifacts, including a method for calculating the change in CER due to passive and active movements.
+
+% Ensure to conclude each section with a brief summary or a transition to the next section.
+
+
+\subsection{Evaluation Parameters}
+\begin{itemize}
+    \item Signal-to-Noise Ratio (SNR)
+    \item Settling Time
+    \item Chip Error Rate (CER) for BCC application
+    \item Movement Artifacts Measurement Methodology
+    
+For the quantification of movement artifacts, particularly in the context of BCC applications, the Chip Error Rate (CER) ratio under passive and active conditions was utilized. The formula for calculating the movement artifacts impact is given by:
+\begin{equation}
+    \text{Movement Artifacts Impact} = \frac{\text{CER\_active}}{\text{CER\_passive}}
+\end{equation}
+where CER\_active represents the chip error rate under active (movement) conditions, and CER\_passive represents the chip error rate under passive (no movement) conditions. A value greater than 1 indicates an increase in transmission errors due to movement.
+
+\end{itemize}
+
+\subsection{Experimental Setup}
+\subsubsection{Equipment and Software}
+\subsubsection{Procedure}
+
+\section{Results}
+\subsection{SNR Analysis}
+\subsection{Settling Time Observations}
+\subsection{Chip Error Rate (CER) Analysis}
+\subsection{Movement Artifacts Evaluation}
+
+\section{Discussion}
+\subsection{Comparative Performance Analysis}
+\subsubsection{ECG Measurement Performance}
+\subsubsection{BPG and BioZ Pneumography Performance}
+\subsubsection{BCC Application Performance}
+\subsection{Movement Artifacts Across Scenarios}
+
+\section{Conclusion}
+\subsection{Summary of Findings}
+\subsection{Implications for Electrode Selection in BioZ and BCC Applications}
+\subsection{Future Research Directions}
+
+% Add the References section as per your formatting guideline.
+\section*{References}
+
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,IEEEexample}
