@@ -1,12 +1,15 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{hyperref}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
-\usepackage{xcolor}
+\usepackage{xcolor, soul}
+\sethlcolor{yellow}
+\newcommand{\notea}[1]{\textcolor{blue}{Armands: #1}}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -28,7 +31,14 @@ email address or ORCID}
 Riga, Latvia \\
 email address or ORCID}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Krisjanis Nesenbergs}
+\IEEEauthorblockN{3\textsuperscript{rd} Vladislavs Medvedevs}
+\IEEEauthorblockA{\textit{Cyber-Physical Systems Laboratory} \\
+\textit{Institute of Electronics and Computer Science}\\
+Riga, Latvia \\
+email address or ORCID}
+\and
+
+\IEEEauthorblockN{4\textsuperscript{th} Krisjanis Nesenbergs}
 \IEEEauthorblockA{\textit{Cyber-Physical Systems Laboratory} \\
 \textit{Institute of Electronics and Computer Science}\\
 Riga, Latvia \\
@@ -55,7 +65,7 @@ email address or ORCID}
 \input{sections/000_introduction.tex}
 \input{sections/001_emperical_analysis}
 
-\section{Materials and Methods}\section{Materials and Methods}
+\section{Materials and Methods}
 
 \subsection{Electrode Types}
 This study investigates the performance of four distinct electrode types in bioimpedance measurements and Body-Coupled Communication (BCC) applications:
@@ -71,6 +81,8 @@ This study investigates the performance of four distinct electrode types in bioi
 
 Each electrode type's construction and material properties uniquely contribute to its performance in specific biomedical applications, from standard ECG measurements to innovative BCC functionalities. 
 
+\notea{Also describe size and shapes of the electrodes.}
+
 \subsection{Measurement Scenarios}
 We focused on two primary scenarios to evaluate electrode performance:
 
@@ -78,10 +90,11 @@ We focused on two primary scenarios to evaluate electrode performance:
 ECG serves as a fundamental application for assessing electrode efficacy, focusing on the Signal-to-Noise Ratio (SNR), settling time, and susceptibility to movement artifacts. These parameters are critical for diagnosing cardiac conditions and ensuring the reliability of cardiac monitoring systems.
 
 \subsubsection{BioZ Pneumography and BCC Use-Case}
+\notea{This may be better split in two seperate scenarios}
 Exploration of electrodes' performance in BioZ pneumography and BCC applications to understand their suitability for advanced healthcare monitoring and data transmission through the human body. The emphasis is on evaluating electrodes under realistic conditions that mimic their intended use in wearable technologies and non-invasive diagnostic tools.
 
 \subsection{Performance Evaluation Parameters}
-The study quantitatively assesses electrode performance using the following metrics:
+The study quantitatively assesses electrode performance using the following metrics\notea{For each metric add, how it is calculated. Again, consider differentiating which metrics are for BCC and which for BioZ}:
 \begin{itemize}
     \item \textbf{Signal-to-Noise Ratio (SNR):} Essential for determining the clarity and quality of bioimpedance signals and BCC data transmission.
     
@@ -93,17 +106,22 @@ The study quantitatively assesses electrode performance using the following metr
 \end{itemize}
 
 \subsection{Experimental Setup}
+\notea{We need a drawing..}
+
 The study employs an MFIA Impedance Analyzer for bioimpedance signal measurement and Software Defined Radios (SDRs) for evaluating BCC communication quality. Data acquisition and analysis were facilitated through custom scripts in MATLAB and Python, enabling the extraction of SNR, settling time, and CER metrics from the collected data.
 
-Electrodes were tested under controlled conditions to simulate their application in ECG recording, BioZ pneumography, and BCC scenarios. This approach ensures a comprehensive evaluation of each electrode type's performance, providing insights into their potential applications in biomedical engineering and wearable device technologies.
+Electrodes were tested under controlled conditions to simulate their application in ECG recording, BioZ pneumography, and BCC scenarios \notea{How exactly? From this description nobody will be able to reproduce our experiments}. This approach ensures a comprehensive evaluation of each electrode type's performance, providing insights into their potential applications in biomedical engineering and wearable device technologies.
 
 \subsection{Data Collection and Analysis}
+\notea{Consider merging with previous section. Not much information here.}
+
 Data were collected across static and dynamic conditions to assess each electrode type's performance comprehensively. The analysis focused on identifying key performance metrics, facilitating a deeper understanding of how different electrode designs and materials influence bioimpedance measurement and BCC efficacy.
 
-This methodology aims to provide a robust framework for comparing the efficacy of various electrode types in biomedical applications, contributing to the development of more reliable, efficient, and user-friendly non-invasive diagnostic and communication technologies.
+This methodology aims to provide a robust framework for comparing the efficacy of various electrode types in biomedical applications, contributing to the development of more reliable, efficient, and user-friendly non-invasive diagnostic and communication technologies. \notea{This may be stated in the beginning of the section as the objective.}
 
 
 \subsection{Evaluation Parameters}
+\notea{Duplicating with Section C...}
 \begin{itemize}
     \item Signal-to-Noise Ratio (SNR)
     \item Settling Time
@@ -119,20 +137,23 @@ where CER\_active represents the chip error rate under active (movement) conditi
 \end{itemize}
 
 \subsection{Experimental Setup}
+\notea{Okay, please cleanup the unnecessary text! Experimental setup is explained tree times. It is hard to keep track of what is important and what is not.}
 \section{Experimental Setup}
 
-This study aims to evaluate the performance of different electrode types across various biomedical applications, including electrocardiography (ECG), breathing measurement, pulse wave analysis, and Body-Coupled Communication (BCC). The primary performance metrics of interest are the Signal-to-Noise Ratio (SNR), settling time, and the impact of movement artifacts on these measurements. To achieve this, we utilized a comprehensive experimental setup involving an MFIA Impedance Analyzer for vital sign measurements and a pair of Software Defined Radios (SDRs) for assessing the quality of data transmission in BCC applications.
+This study aims to evaluate the performance of different electrode types across \hl{various} biomedical applications, including electrocardiography (ECG), breathing measurement, pulse wave analysis, and Body-Coupled Communication (BCC). The primary performance metrics of interest are the Signal-to-Noise Ratio (SNR), settling time, and the impact of movement artifacts on these measurements. To achieve this, we utilized a \hl{comprehensive} experimental setup involving an MFIA Impedance Analyzer for vital sign measurements and a pair of Software Defined Radios (SDRs) for assessing the quality of data transmission in BCC applications.
+
+\notea{Aforementioned suggests, MFIA and SDRs were used together... Which BioZ scheme was used? A pic would be nice. Which BCC scheme was used. A pic would be nice. \\ Consider describing the setup for BioZ and BCC seperately. Lay out detailed experimental setup, so if necessary others could reproduce your work. What are signal amplitudes?}
 
 \subsection{Equipment and Software}
 
 \subsubsection{MFIA Impedance Analyzer}
-The MFIA Impedance Analyzer, a precision instrument designed by Zurich Instruments, serves as the cornerstone of our experimental setup for measuring bioimpedance signals. With its capability to measure impedance over a wide frequency range and at very high accuracies, it is ideally suited for capturing the subtle variations in bioimpedance associated with ECG, breathing, and pulse wave signals. The analyzer's high precision allows for the detailed characterization of the electrode-skin interface impedance, which is critical for our analysis of settling times and signal quality.
+The MFIA Impedance Analyzer, a precision instrument designed by Zurich Instruments, serves as the cornerstone of our experimental setup for measuring bioimpedance signals. With its capability to measure impedance over a wide frequency range and at very high accuracies, it is ideally suited for capturing the subtle variations in bioimpedance associated with ECG \notea{ECG replace with heart activity}, breathing, and pulse wave signals. The analyzer's high precision allows for the detailed characterization of the electrode-skin interface impedance, which is critical for our analysis of settling times and signal quality. \notea{Better put in some references to the documentation and most important technical characteristics. }
 
 \subsubsection{Software Defined Radios (SDRs)}
 A pair of Software Defined Radios (SDRs) is used to evaluate the performance of electrodes in BCC applications. These SDRs, operating in a controlled laboratory environment, simulate the transmission and reception of data across the human body. By varying the transmitted signal's frequency and modulation scheme, we assess the electrodes' efficacy in supporting efficient body-coupled communication. The SDRs enable us to measure the Chip Error Rate (CER), providing a quantitative measure of data transmission quality under different conditions, including the presence of movement artifacts.
 
 \subsubsection{Data Acquisition and Analysis Software}
-Data acquisition and analysis are performed using custom-developed software scripts running on MATLAB and Python. These scripts are designed to interface with the MFIA Impedance Analyzer and SDRs, facilitating the automatic collection, processing, and analysis of the measured signals. The software provides tools for filtering, noise reduction, and signal analysis, allowing for the extraction of SNR values, settling times, and CER metrics from the raw data.
+Data acquisition and analysis are performed using custom-developed software scripts running on MATLAB and Python. These scripts are designed to interface with the MFIA Impedance Analyzer and SDRs, facilitating the automatic collection, processing, and analysis of the measured signals. The software provides tools for filtering, noise reduction, and signal analysis, allowing for the extraction of SNR values, settling times, and CER metrics from the raw data. \notea{The signal processing and filtering methods should be explained a bit more. Instead describing software, focus on what signals exactly are recorded? What is the measurement acquisition pipeline? What specific techniques are used for signal processing? }
 
 \subsection{Electrode Types Under Test}
 
@@ -143,20 +164,20 @@ The study evaluates four types of electrodes:
     \item Custom-made gold-plated copper electrodes on a flexible PCB,
     \item Custom-made carbon-printed electrodes.
 \end{enumerate}
-Each electrode type is assessed for its performance in transmitting and receiving bioimpedance signals and its effectiveness in BCC applications.
+\hl{Each electrode type is assessed for its performance in transmitting and receiving bioimpedance signals and its effectiveness in BCC applications.} \notea{How?}
 
 \subsection{Measurement Scenarios}
 
 \subsubsection{Vital Sign Measurements}
-For vital sign measurements, including ECG, breathing, and pulse wave analysis, electrodes are attached to predefined locations on the body, following standard medical protocols. The MFIA Impedance Analyzer, interfaced with the body via these electrodes, injects a low-amplitude alternating current (AC) signal and measures the resulting voltage response. The analysis of these measurements allows for the determination of SNR and settling times, providing insights into each electrode type's sensitivity and responsiveness.
+For vital sign measurements, including ECG, breathing, and pulse wave analysis, electrodes are attached to predefined locations on the body, following standard medical protocols. The MFIA Impedance Analyzer, interfaced with the body via these electrodes, \hl{injects a low-amplitude alternating current (AC)} signal and measures the resulting voltage response. \notea{What is the amplitude, frequency?} The analysis of these measurements allows for the determination of SNR and settling times, providing insights into each electrode type's sensitivity and responsiveness.
 
 \subsubsection{Body-Coupled Communication}
-In BCC experiments, the SDRs are configured to transmit and receive data signals through the body, using the test electrodes as the interface. The setup mimics real-world BCC applications, with one SDR acting as the transmitter and the other as the receiver. The electrodes' performance is evaluated based on the CER, reflecting the quality of data transmission through the body.
+In BCC experiments, the \hl{SDRs are configured} \notea{What are the configuration parameters?} to transmit and receive data signals through the body, using the test electrodes as the interface. The setup mimics real-world BCC applications, with one SDR acting as the transmitter and the other as the receiver. The electrodes' performance is evaluated based on the CER, reflecting the quality of data transmission through the body.
 
 \subsection{Measurement Protocols}
 
 \subsubsection{SNR Measurement}
-SNR measurements are conducted by recording the bioimpedance signals generated during ECG, breathing, and pulse wave activities. The MFIA Impedance Analyzer captures the signals, with the accompanying software calculating the SNR by comparing the power of the signal of interest to the power of the background noise.
+SNR measurements are conducted by recording the bioimpedance signals generated during \hl{ECG} \notea{Revise this through the whole article. Variations in bioimpedance are not generated by ECG, but by heart rate activity (muscle contractions, changes in blood flow or something like that)}, breathing, and pulse wave activities. The MFIA Impedance Analyzer captures the signals, with the accompanying software calculating the SNR by comparing the power of the signal of interest to the power of the background noise.
 
 \subsubsection{Settling Time Evaluation}
 The settling time is measured by observing the time required for the bioimpedance signal to stabilize after the initial electrode placement. This metric is crucial for applications requiring rapid setup and immediate signal acquisition, such as emergency medical services or continuous health monitoring.
@@ -192,9 +213,9 @@ By employing this rigorous experimental setup, the study aims to provide a compr
 
 % Add the References section as per your formatting guideline.
 \section*{References}
+\notea{Bibliography needs fixing!}
 
-
-\bibliographystyle{IEEEtran}
-\bibliography{IEEEabrv,IEEEexample}
+% \bibliographystyle{IEEEtran}
+% \bibliography{IEEEabrv,IEEEexample}
 
 \end{document}
