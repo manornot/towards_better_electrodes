@@ -1,15 +1,35 @@
 \notea{Where is the abstract?}
-\section{Introduction and Background on BioImpedance (BioZ)}
-\notea{Consider calling the section just "Introduction"}
-In the interdisciplinary domain of biomedical engineering and wearable technology, the development and optimisation of electrode technology are critical for advancing non-invasive diagnostic methods and facilitating innovative communication modalities through the human body. This article embarks on a critical examination of various electrodes presently available, with a particular focus on their application in electrocardiography (ECG). \notea{The sentence is confusing. Maybe: "This paper examines various electrodes initially intended for electrocardiography (ECG), but also often used for ....BioZ and BCC. We need some references showing, what electrodes are used in state of the art bioimpedane measurement devices."}. Beyond traditional uses, our exploration extends to assessing these electrodes' compatibility with BioImpedance (BioZ) and Body-Coupled Communication (BCC)—two areas burgeoning with potential to revolutionize healthcare monitoring and data transmission directly through the human body. \notea{Aforementioned asks for a reference. Why we are putting BioZ and BCC together? Maybe shortly explain the difference, emphasisizing that for biopotential sensing electrodes are used to capture electric field variations from human physiology, but for BioZ and BCC electric field is induced in the body and then measured?}
+\section{Introduction}
+{
+In the rapidly evolving field of biomedical engineering and wearable technology, the development and optimization of electrode technology play a pivotal role in advancing non-invasive diagnostic methods and pioneering new modes of communication through the human body. This paper delves into the evaluation of electrodes originally designed for electrocardiography (ECG)  and Electro Muscular Stimulation (EMS) to assess their suitability for BioImpedance (BioZ) and Body-Coupled Communication (BCC) applications. Both BioZ and BCC represent cutting-edge technologies with the potential to transform healthcare monitoring and data transmission by leveraging the human body as a medium.
 
-BioImpedance (BioZ) stands out as a non-invasive technique that quantifies the electrical impedance of biological tissues. By applying a minor electrical current through the body and measuring the resultant voltage response, BioZ offers invaluable insights into the body's composition and physiological state. This method is predicated on the principle that different biological tissues—such as blood, muscle, and fat—possess unique electrical characteristics. The ability to discern these properties allows for a profound understanding of an individual's health status and facilitates the management of various medical conditions.
+BioImpedance (BioZ) is recognized for its non-invasive approach to quantifying the electrical impedance of biological tissues. By introducing a small electrical current through the body and measuring the resulting voltage response, BioZ provides invaluable insights into the body's composition and physiological state. This technique is based on the premise that different biological tissues—such as blood, muscle, and fat—exhibit distinctive electrical characteristics, thereby enabling detailed health assessments and the management of various medical conditions.
 
-The utility of BioZ spans a wide array of medical applications, making it a cornerstone of modern non-invasive diagnostic approaches. It serves as an essential tool for body composition analysis, enabling the precise estimation of parameters such as fat mass, lean muscle mass, and total body water. This capability is indispensable in fields ranging from nutritional assessment and obesity management to optimizing athletic performance. Furthermore, BioZ's role extends to assessing hydration status, cardiac output, and pulmonary fluid content, offering critical insights for managing kidney diseases, heart failure, and pulmonary conditions, respectively.
+Moreover, the utility of BioZ extends across numerous medical applications, serving as a fundamental tool for analyzing body composition. It allows for the accurate estimation of crucial parameters like fat mass, lean muscle mass, and total body water. Such capabilities are essential for nutritional assessment, obesity management, and enhancing athletic performance, among others. Additionally, BioZ plays a vital role in monitoring hydration status, cardiac output, and pulmonary fluid content, providing essential data for managing conditions related to the kidneys, heart, and lungs.
 
-\notea{Consider shortening previous two paragraphs and providing relevant references. The focus is on problems related to electrodes. Consider describing more, what kind of electrodes are used through other studies related to BCC and Bioz. What are the main differences and problems? Reference D. Lapsas paper?}
+The efficacy of BioZ and BCC is heavily dependent on achieving good and electrode contact quality and maintaining low impedance at the electrode-skin interface. These factors are critical for accurate and reliable measurements, with good electrode contact ensuring uniform current distribution across the measurement site and minimizing errors. For BCC applications, in particular, low interface impedance is essential for effective signal transmission through the body, thus optimizing communication range and quality while conserving power.
 
-The success of BioZ and BCC hinges on the ability to ensure excellent contact quality and maintain \hl{low impedance at the electrode-skin interface} \notea{This suggests that the electrical impedance could be a good metric for benchmarking... In practice measurements suggested that it does reflect if electrodes are fit for measuring BioZ}. These factors are paramount for achieving accurate and reliable measurements. Good electrode contact ensures uniform current distribution across the measurement site, minimizing errors and enhancing measurement sensitivity. This sensitivity is crucial for detecting subtle physiological changes, potentially signaling early disease stages or health risk factors. Moreover, in BCC applications, low interface impedance is vital for efficient signal transmission through the body, optimizing communication range and quality while conserving power.
+
+
+Signal Quality and Noise Reduction:  Lower impedance translates to a better signal-to-noise ratio. This means the desired biological signal (like the ECG waveform) is clearer and less contaminated by background noise or artifacts.
+\cite{Grimnes2000bioimpedance}
+Reduced Distortion:  High electrode impedance can sometimes lead to distortion of the biopotential signal. Lower impedance helps minimize this distortion, ensuring a more accurate representation of the physiological process being measured.
+\cite{Tallgren2005evaluation}
+
+Improved Sensitivity: In some applications, lower electrode impedance can improve the ability to detect very small or subtle changes in biopotentials.
+\cite{Buxi2013correlation}
+Enhanced Patient Comfort: Extremely high impedance can sometimes contribute to minor skin irritation on sensitive individuals. Lower impedance helps avoid this issue.
+
+Important Considerations:
+
+While lower impedance is generally desirable, it's not the sole factor determining electrode performance. Material choice, electrode design, and signal processing techniques also play crucial roles.
+There might be a point where further reduction in impedance doesn't provide significant gains. At that point, other aspects of electrode optimization become more important.
+
+
+Electrodes for biopotential sensing are primarily used to capture electric field variations stemming from human physiology. However, for BioZ and BCC, an electric field is intentionally induced in the body and subsequently measured. This distinction underscores the rationale behind examining the same set of electrodes for both BioZ and BCC within this paper: despite their differing objectives and success measures, the fundamental requirements for electrode performance—such as sensitivity, signal-to-noise ratio, and frequency stability—remain consistent across both applications.
+
+This study aims to elucidate the reasons behind the superior performance of certain electrodes in BioZ and BCC applications by conducting a comparative analysis based on the aforementioned criteria. Through this exploration, we seek to offer meaningful insights into future electrode development, potentially enhancing diagnostic capabilities and introducing novel communication methods through the human body. This research represents a significant advancement at the intersection of biomedical engineering and wearable technologies, aiming to contribute to the continuous improvement of electrode technology for non-invasive diagnostics and beyond.
+
 
 \notea{Consider discussing the importance of right electrodes for BioZ and BCC separately. They have quite different goals and measures of success. Then shortly what is common - why we have put them in one paper and why we believe we can use the same electrodes for both of them.}
 
@@ -18,73 +38,19 @@ As we delve into the comparative analysis of electrode performance, this article
 
 
 
-\section{Literature Review}
-{
 \notea{This section appears more like an introduction section. Consider merging the text from these two. I think, if we make a section for literature review it should be explicitly about the electrodes used in the state of the art BioZ and BCC setups.}
 
-Cardiovascular diseases are major global health concerns, driving the need for advanced monitoring technologies. Bioimpedance measurement (BioZ) has emerged as a key technique for non-invasively monitoring heart rate, blood pressure, and other vital signs. Its integration into wearable devices offers the potential for continuous health monitoring outside clinical settings, which is vital for patient care and disease management \cite{OriginalSource1, towards, NewSource1}.
+Cardiovascular diseases are major global health concerns, driving the need for advanced monitoring technologies. Bioimpedance measurement (BioZ) has emerged as a key technique for non-invasively monitoring heart rate, blood pressure, and other vital signs. Its integration into wearable devices offers the potential for continuous health monitoring outside clinical settings, which is vital for patient care and disease management \cite{rabbani2023low, ormanis2020towards, zaira2023prediction}.
 
-Recent advancements in electrode technology have played a crucial role in the development of BioZ and BCC. Novel electrode materials and structures have been developed to improve adhesion to the skin and effective signal collection. These advancements include the use of composite dry electrodes and novel structures for flexible and wearable sensors, which are essential for efficient biosignal detection \cite{PubMedArticle, NewSource2}.
+Recent advancements in electrode technology have played a crucial role in the development of BioZ and BCC. Novel electrode materials and structures have been developed to improve adhesion to the skin and effective signal collection. These advancements include the use of composite dry electrodes and novel structures for flexible and wearable sensors, which are essential for efficient biosignal detection \cite{lee2021recent}.
 
-In BCC, the focus has been on optimizing communication through the human body. Studies have explored various aspects such as the type of coupling (capacitive versus galvanic), the optimal frequency range, and the impact of electrode placement and shape on signal strength. For eHealth applications, galvanic coupling is often preferred due to its privacy and interference-resilience properties \cite{electrode_comp, NewSource3}. The operational frequency range for BCC has been found to be most efficient between 1MHz and 100 MHz, with the optimal frequency varying depending on electrode placement \cite{electrode_comp, NewSource4}.
+In BCC, the focus has been on optimizing communication through the human body. Studies have explored various aspects such as the type of coupling (capacitive versus galvanic), the optimal frequency range, and the impact of electrode placement and shape on signal strength. For eHealth applications, galvanic coupling is often preferred due to its privacy and interference-resilience properties \cite{lapsa2022electrode, shi2024spatially}. The operational frequency range for BCC has been found to be most efficient between 1MHz and 100 MHz, with the optimal frequency varying depending on electrode placement \cite{lapsa2022electrode, }.
 
-The challenges in developing bioimpedance-enabled wearable devices are multifaceted. They include selecting appropriate electrodes, their configuration, power supply, weight, and ensuring accuracy while maintaining user convenience \cite{OriginalSource1, towards, NewSource5}. The trade-off between the accuracy of tetrapolar electrode setups and the practicality of bipolar setups for wearable technology is a significant consideration in current research \cite{towards, NewSource6}.
+The challenges in developing bioimpedance-enabled wearable devices are multifaceted. They include selecting appropriate electrodes, their configuration, power supply, weight, and ensuring accuracy while maintaining user convenience \cite{rabbani2023low, ormanis2020towards}. The trade-off between the accuracy of tetrapolar electrode setups and the practicality of bipolar setups for wearable technology is a significant consideration in current research \cite{ormanis2020towards, rabbani2023low}.
 
-Notable studies in the field have investigated various aspects of wearable bioimpedance devices. For instance, research has been conducted on optimizing electrode location, assessing device performance depending on electrode characteristics, and applying heart rate detection algorithms to bioimpedance measurements \cite{towards, PubMedArticle, NewSource7}. Alharbi et al.'s large-scale study with 51 test subjects is a notable example, validating multi-stage signal processing procedures for heartbeat detection \cite{towards, NewSource8}.
+Notable studies in the field have investigated various aspects of wearable bioimpedance devices. For instance, research has been conducted on optimizing electrode location, assessing device performance depending on electrode characteristics, and applying heart rate detection algorithms to bioimpedance measurements \cite{ormanis2020towards, lee2021recent, zhang2023physiological}. Alharbi et al.'s large-scale study with 51 test subjects is a notable example, validating multi-stage signal processing procedures for heartbeat detection \cite{ormanis2020towards, bellier2023wireless}.
 
-This work presents an experimental study examining the impact of electrode type for heart rate monitoring from bioimpedance signals obtained on the wrist. Our approach, focusing on a bipolar electrode setup, aims to strike a balance between measurement accuracy and user convenience, potentially enabling smaller and more user-friendly wearable devices \cite{towards}.
-}
-refs{
-$https://pubmed.ncbi.nlm.nih.gov/34150347/$
-$https://www.researchgate.net/publication/342097555_Towards_Body_Coupled_Communication_for_eHealth_Experimental_Study_of_Human_Body_Frequency_Response$
-$https://www.researchgate.net/publication/365642072_Electrode_Comparison_for_Heart_Rate_Detection_via_Bioimpedance_Measurements$}
-
-
-
-\section{Why Gold electrodes are the best}
-\notea{I don't think we need a separate section for this. I believe this belongs more to the literature review. There it would provide good basis for our further research: what electrodes and why we tested.}
-{
-In comparing reusable gold-plated copper electrodes to disposable Ag/AgCl electrodes for BioZ and BCC (Bioelectrical Impedance Analysis and Body Composition Analysis) applications, the advantages of the former over the latter are evident in several key aspects, supported by scientific research.
-
-\begin{enumerate}
-    \item \textbf{Material Properties and Sensitivity}: Gold-plated copper electrodes exhibit enhanced electrochemical stability and sensitivity due to the superior conductivity and biocompatibility of gold. This property is critical for BioZ and BCC applications, where precise and stable signal acquisition is essential for accurate body composition and impedance measurements. Gold's inert nature also reduces the likelihood of electrode oxidation and degradation, ensuring consistent performance over time, a feature not as pronounced in Ag/AgCl electrodes \href{https://consensus.app/papers/amino-acid-analysis-using-copper-nanoparticle-plated-zen/95f4e51b52de5e0081608398a7922a14/?utm_source=chatgpt}{(Zen et al., 2004)}.
-
-    \item \textbf{Reusability and Environmental Impact}: Reusable gold-plated electrodes significantly lower the environmental impact and waste associated with the frequent disposal of Ag/AgCl electrodes. This sustainability aspect is increasingly important in medical and health monitoring applications, aligning with global efforts to reduce biomedical waste \href{https://consensus.app/papers/integration-goldsputtered-paper-wireincluded-platforms-nunezbajo/6a42988eac995424b7ba7ccdeef73c27/?utm_source=chatgpt}{(Nunez-Bajo et al., 2017)}.
-
-    \item \textbf{Economic Efficiency and sustainability}: While the initial cost of gold-plated copper electrodes may be higher than disposable Ag/AgCl electrodes, their reusability offers long-term cost savings. Facilities can reduce their overall expenditures on electrodes for BioZ and BCC measurements by investing in electrodes that do not require frequent replacement \href{https://consensus.app/papers/evaluation-commercially-electrodes-gels-recording-tallgren/f57cbd289dfc530d8783f6145a196370/?utm_source=chatgpt}{(Tallgren et al., 2005)}.
-
-    \item \textbf{Signal Stability and Reliability}: Gold-plated electrodes provide stable and reliable signal acquisition for extended periods, which is crucial for long-term monitoring and analysis in BioZ and BCC applications. This stability is attributed to the consistent electrical conductivity and resistance to corrosion of gold-plated surfaces, ensuring minimal signal distortion or loss over time \href{https://consensus.app/papers/fabrication-flexible-stretchable-nanostructured-gold-zhao/57710c3c09fc5a78985f841d4809eada/?utm_source=chatgpt}{(Zhao et al., 2018)}.
-
-    \item \textbf{Biocompatibility}: Gold is highly biocompatible, making gold-plated copper electrodes suitable for prolonged contact with skin without causing irritation or allergic reactions, a factor that is particularly important in wearable health monitoring devices and applications where electrodes remain in contact with the skin for extended periods \href{https://consensus.app/papers/onsite-fuel-electroanalysis-determination-lead-copper-almeida/91bc0dde8e93533dba0e38522669a3ec/?utm_source=chatgpt}{(Almeida et al., 2014)}.
-
-    To support the reasoning that reusable gold-plated copper electrodes are better for BioZ and BCC applications compared to disposable Ag/AgCl electrodes, let's reference scientific articles that highlight the advantages of gold-plated electrodes in terms of durability, conductivity, and overall performance in bioimpedance measurements:
-
-\begin{itemize}
-    \item \textbf{Durability and Reusability}: Gold-plated electrodes are known for their durability and the ability to be reused multiple times without significant loss in performance. This is crucial for long-term monitoring and repeated measurements in both BioZ and BCC applications. The copper base with a gold plating ensures a good balance between cost-effectiveness and performance durability. 
-    
-    \textit{Reference}: An article on the \textit{MDPI} platform discusses the advantages of gold-plated electrodes in electrical bioimpedance analysis, highlighting their consistent performance over time due to gold's excellent conductivity and resistance to oxidation (\textit{https://www.mdpi.com/1424-8220/23/9/4251}).
-    
-    \item \textbf{Signal Stability and Conductivity}: Gold's superior electrical conductivity ensures stable and reliable signal acquisition, which is paramount in bioimpedance measurements. Gold-plated electrodes provide a consistent and low-impedance contact with the skin, improving the accuracy of bioimpedance and body-coupled communication signals.
-    
-    \textit{Reference}: A study published in \textit{Nature Scientific Reports} demonstrates the use of gold-plated electrodes for high-quality electrophysiological measurements, noting their enhanced signal stability and reduced noise compared to other materials (\textit{Nature Scientific Reports, Gold-Plated Electrode with High Scratch Strength}, https://www.nature.com/articles/s41598-019-39138-w).
-    
-    \item \textbf{Biocompatibility}: Gold is highly biocompatible, minimizing the risk of skin irritation or allergic reactions during prolonged use. This is especially important for wearable devices and applications requiring extended contact with the skin.
-    
-    \textit{Reference}: The \textit{IEEE Sensors Journal} includes research on wearable bioimpedance hydration monitoring systems that utilize gold-plated electrodes, emphasizing their biocompatibility and effectiveness in long-term monitoring scenarios (\textit{IEEE Sensors, Wearable Bioimpedance Hydration Monitoring System}).
-    
-    \item \textbf{Frequency Response}: Gold-plated copper electrodes exhibit a broad and uniform frequency response, making them suitable for the wide range of frequencies used in BioZ for detailed tissue analysis and in BCC for effective communication through the body.
-    
-    \textit{Reference}: An article in \textit{MDPI Sensors} discusses the construction and evaluation of a four-electrode bioimpedance probe made of pin-shaped, gold-plated copper electrodes, highlighting their suitable frequency response for bioimpedance applications (\textit{MDPI Sensors, Feasibility of Using Electrical Impedance Spectroscopy}).
-\end{itemize}
-
-By comparing these characteristics to disposable Ag/AgCl electrodes, which may degrade over time and are not designed for reuse, it becomes clear that gold-plated copper electrodes offer superior performance for BioZ and BCC applications. The references provided support the advantages of gold-plated electrodes in terms of durability, signal quality, biocompatibility, and frequency response, making them a preferable choice for these applications.
-
-    
-\end{enumerate}
-
-In conclusion, reusable gold-plated copper electrodes present a superior option for BioZ and BCC applications compared to disposable Ag/AgCl electrodes, offering enhanced performance, economic efficiency, sustainability, and biocompatibility. These advantages make them a preferable choice for accurate, reliable, and environmentally friendly body composition and impedance analysis.
-
-
+This work presents an experimental study examining the impact of electrode type for heart rate monitoring from bioimpedance signals obtained on the wrist. Our approach, focusing on a bipolar electrode setup, aims to strike a balance between measurement accuracy and user convenience, potentially enabling smaller and more user-friendly wearable devices \cite{ormanis2020towards}.
 }
 
 

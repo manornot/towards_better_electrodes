@@ -63,7 +63,7 @@ email address or ORCID}
 
 
 \input{sections/000_introduction.tex}
-\input{sections/001_emperical_analysis}
+\input{sections/001_LiteratureReview.tex}
 
 \section{Materials and Methods}
 
@@ -72,11 +72,10 @@ This study investigates the performance of four distinct electrode types in bioi
 \begin{itemize}
     \item \textbf{Classical Ag/AgCl Disposable Electrodes:} Predominantly used in electrocardiography (ECG) for their excellent electrical conductivity and stable electrochemical properties. These electrodes, featuring a silver base coated with silver chloride, facilitate the accurate transduction of ionic to electronic current, essential for high-fidelity cardiac signal acquisition.
     
-    \item \textbf{Ag/AgCl Electrodes on Hydrogel Base:} These electrodes enhance skin adherence and moisture retention, potentially improving long-term signal stability and comfort.
+    \item \textbf{Reusable EMS electrodes:} These electrodes enhance skin adherence and moisture retention, potentially improving long-term signal stability and comfort.
     
     \item \textbf{Custom-Made Gold-Plated Copper Electrodes on Flexible PCB:} Offer superior durability, reusability, and biocompatibility, aimed at reducing environmental impact and operational costs.
     
-    \item \textbf{Custom-Made Carbon-Printed Electrodes:} Known for their flexibility and adaptability to various surface geometries, potentially offering unique advantages in wearable device integration.
 \end{itemize}
 
 Each electrode type's construction and material properties uniquely contribute to its performance in specific biomedical applications, from standard ECG measurements to innovative BCC functionalities. 
@@ -126,13 +125,13 @@ This methodology aims to provide a robust framework for comparing the efficacy o
     \item Signal-to-Noise Ratio (SNR)
     \item Settling Time
     \item Chip Error Rate (CER) for BCC application
-    \item Movement Artifacts Measurement Methodology
+%    \item Movement Artifacts Measurement Methodology
     
-For the quantification of movement artifacts, particularly in the context of BCC applications, the Chip Error Rate (CER) ratio under passive and active conditions was utilized. The formula for calculating the movement artifacts impact is given by:
-\begin{equation}
-    \text{Movement Artifacts Impact} = \frac{\text{CER\_active}}{\text{CER\_passive}}
-\end{equation}
-where CER\_active represents the chip error rate under active (movement) conditions, and CER\_passive represents the chip error rate under passive (no movement) conditions. A value greater than 1 indicates an increase in transmission errors due to movement.
+%For the quantification of movement artifacts, particularly in the context of BCC applications, the Chip Error Rate (CER) ratio under passive and active conditions was utilized. The formula for calculating the movement artifacts impact is given by:
+%\begin{equation}
+%    \text{Movement Artifacts Impact} = \frac{\text{CER\_active}}{\text{CER\_passive}}
+%\end{equation}
+%where CER\_active represents the chip error rate under active (movement) conditions, and CER\_passive represents the chip error rate under passive (no movement) conditions. A value greater than 1 indicates an increase in transmission errors due to movement.
 
 \end{itemize}
 
@@ -195,9 +194,42 @@ By employing this rigorous experimental setup, the study aims to provide a compr
 
 \section{Results}
 \subsection{SNR Analysis}
+\subsubsection{ECG Measurement Performance}
+\begin{itemize}
+    \item Ag/AgCl Disposable Electrodes - 
+    \item EMS Electrodes - 
+    \item Custom-Made Gold-Plated Copper Electrodes - 
+\end{itemize}
+\subsubsection{BPG and BioZ Pneumography Performance}
+\begin{itemize}
+    \item Ag/AgCl Disposable Electrodes - 
+    \item EMS Electrodes - 
+    \item Custom-Made Gold-Plated Copper Electrodes -
+\end{itemize}
+
+
 \subsection{Settling Time Observations}
+
+\subsubsection{ECG Measurement Performance}
+\begin{itemize}
+    \item Ag/AgCl Disposable Electrodes - 
+    \item EMS Electrodes - 
+    \item Custom-Made Gold-Plated Copper Electrodes -
+\end{itemize}
+\subsubsection{BPG and BioZ Pneumography Performance}
+\begin{itemize}
+    \item Ag/AgCl Disposable Electrodes - 
+    \item EMS Electrodes - 
+    \item Custom-Made Gold-Plated Copper Electrodes -
+\end{itemize}
+
 \subsection{Chip Error Rate (CER) Analysis}
-\subsection{Movement Artifacts Evaluation}
+\begin{itemize}
+    \item Ag/AgCl Disposable Electrodes - 3.3\%
+    \item EMS Electrodes - 5.2\%
+    \item Custom-Made Gold-Plated Copper Electrodes - 5.5\%
+\end{itemize}
+%\subsection{Movement Artifacts Evaluation}
 
 \section{Discussion}
 \subsection{Comparative Performance Analysis}
@@ -215,7 +247,7 @@ By employing this rigorous experimental setup, the study aims to provide a compr
 \section*{References}
 \notea{Bibliography needs fixing!}
 
-% \bibliographystyle{IEEEtran}
-% \bibliography{IEEEabrv,IEEEexample}
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,bibliography.bib}
 
 \end{document}
