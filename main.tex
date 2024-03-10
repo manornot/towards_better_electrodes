@@ -80,51 +80,100 @@ This study investigates the performance of four distinct electrode types in bioi
 
 Each electrode type's construction and material properties uniquely contribute to its performance in specific biomedical applications, from standard ECG measurements to innovative BCC functionalities. 
 
-\notea{Also describe size and shapes of the electrodes.}
+%\notea{Also describe size and shapes of the electrodes.}
 
 \subsection{Measurement Scenarios}
-We focused on two primary scenarios to evaluate electrode performance:
+We focused on three primary scenarios to evaluate electrode performance:
 
-\subsubsection{Classical ECG Measurement}
-ECG serves as a fundamental application for assessing electrode efficacy, focusing on the Signal-to-Noise Ratio (SNR), settling time, and susceptibility to movement artifacts. These parameters are critical for diagnosing cardiac conditions and ensuring the reliability of cardiac monitoring systems.
+\subsubsection{BioZ Heart Rate monitoring}
+BPG serves as a fundamental application for assessing electrode efficacy, focusing on the Signal-to-Noise Ratio (SNR) and settling time. These parameters are critical for diagnosing cardiac conditions and ensuring the reliability of cardiac monitoring systems.
 
-\subsubsection{BioZ Pneumography and BCC Use-Case}
-\notea{This may be better split in two seperate scenarios}
-Exploration of electrodes' performance in BioZ pneumography and BCC applications to understand their suitability for advanced healthcare monitoring and data transmission through the human body. The emphasis is on evaluating electrodes under realistic conditions that mimic their intended use in wearable technologies and non-invasive diagnostic tools.
+\subsubsection{BioZ Pneumography}
+Exploration of electrodes' performance in BioZ pneumography to understand their suitability for advanced healthcare monitoring. The emphasis is on evaluating electrodes under realistic conditions that mimic their intended use in wearable technologies and non-invasive diagnostic tools.
+
+\subsubsection{BCC Use-Case}
+The Body Coupled Communication (BCC) technology presents a groundbreaking use-case for the electrodes under test, highlighting their role in enabling efficient and secure data transmission through the human body. BCC technology utilizes the body as a conductive medium for electronic signals, offering a promising solution for wearable device interconnectivity and data exchange in personal healthcare systems. 
+
+
 
 \subsection{Performance Evaluation Parameters}
-The study quantitatively assesses electrode performance using the following metrics\notea{For each metric add, how it is calculated. Again, consider differentiating which metrics are for BCC and which for BioZ}:
+This methodology aims to provide a robust framework for comparing the efficacy of various electrode types in biomedical applications, contributing to the development of more reliable, efficient, and user-friendly non-invasive diagnostic and communication technologies. 
+
+The study quantitatively assesses electrode performance using the following metrics:
 \begin{itemize}
     \item \textbf{Signal-to-Noise Ratio (SNR):} Essential for determining the clarity and quality of bioimpedance signals and BCC data transmission.
+    The SNR is calculated as the ratio of signal amplitude (averaging signal over time) to the standard deviation of the background noise, providing a quantitative measure of the signal's fidelity and integrity. A higher SNR indicates a clearer, more reliable signal, essential for accurate data analysis and interpretation.
     
     \item \textbf{Settling Time:} Measures the time electrodes take to stabilize their signal upon placement, indicating their readiness for immediate data acquisition.
     
+    The settling time refers to the duration needed for a signal to stabilize, with variations no more than 5\% during one cycle of changes in a person's vital signs. This measurement is especially important for situations that demand quick preparation and instant signal capture, such as in emergency medical scenarios or ongoing health monitoring.
+    
     \item \textbf{Chip Error Rate (CER) for BCC Application:} Assesses the reliability of data transmission through the body, reflecting the efficiency of electrode-based communication systems.
     
-    \item \textbf{Movement Artifacts:} Investigated through the ratio of CER under active (with movement) and passive (no movement) conditions to quantify the impact of physical activity on data integrity.
+    The CER is calculated as the ratio of the number of bit errors to the total number of bits transmitted, providing a quantitative measure of the data transmission quality. A lower CER indicates a more reliable communication channel, essential for ensuring the accuracy and integrity of transmitted data in BCC applications.
+    
+    %\item \textbf{Movement Artifacts:} Investigated through the ratio of CER under active (with movement) and passive (no movement) conditions to quantify the impact of physical activity on data integrity.
 \end{itemize}
 
 \subsection{Experimental Setup}
-\notea{We need a drawing..}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/experimentSetup.png}
+    \caption{Experimental setup for evaluating electrode performance in bioimpedance measurements and BCC applications.}
+    \label{fig:experimental_setup}
+\end{figure}
 
-The study employs an MFIA Impedance Analyzer for bioimpedance signal measurement and Software Defined Radios (SDRs) for evaluating BCC communication quality. Data acquisition and analysis were facilitated through custom scripts in MATLAB and Python, enabling the extraction of SNR, settling time, and CER metrics from the collected data.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/experimentSetup_upper_arm.png}
+    \caption{Experimental setup for evaluating electrode performance in bioimpedance measurements and BCC applications.}
+    \label{fig:experimental_setup_upper_arm}
+\end{figure}
 
-Electrodes were tested under controlled conditions to simulate their application in ECG recording, BioZ pneumography, and BCC scenarios \notea{How exactly? From this description nobody will be able to reproduce our experiments}. This approach ensures a comprehensive evaluation of each electrode type's performance, providing insights into their potential applications in biomedical engineering and wearable device technologies.
+The study employs an MFIA Impedance Analyzer for bioimpedance signal measurement and Software Defined Radios (SDRs) for evaluating BCC communication quality. Data acquisition and analysis were facilitated through custom scripts in Python, enabling the extraction of SNR, settling time, and CER metrics from the collected data.
 
-\subsection{Data Collection and Analysis}
-\notea{Consider merging with previous section. Not much information here.}
+Electrodes were tested under controlled conditions to simulate their application in BPG recording, BioZ pneumography, and BCC scenarios.
 
-Data were collected across static and dynamic conditions to assess each electrode type's performance comprehensively. The analysis focused on identifying key performance metrics, facilitating a deeper understanding of how different electrode designs and materials influence bioimpedance measurement and BCC efficacy.
-
-This methodology aims to provide a robust framework for comparing the efficacy of various electrode types in biomedical applications, contributing to the development of more reliable, efficient, and user-friendly non-invasive diagnostic and communication technologies. \notea{This may be stated in the beginning of the section as the objective.}
-
-
-\subsection{Evaluation Parameters}
-\notea{Duplicating with Section C...}
+\subsection{Equipment and Materials}
 \begin{itemize}
-    \item Signal-to-Noise Ratio (SNR)
-    \item Settling Time
-    \item Chip Error Rate (CER) for BCC application
+    \item Electrode Connectros that would allow to plug them to MFIA analyzer and SDR
+    \item MFIA impedance analyzer
+    \item Software-Defined Radios (SDRs)
+    \item AgAgCl electrodes
+    \item Gold plated electrodes
+    \item EMS electrodes
+\end{itemize}
+
+\subsection{Experiment Procedure}
+Each experiment will follow the steps outlined below, to be repeated for each type of electrode:
+
+\begin{enumerate}
+    \item \textbf{Preparation:} Ensure all equipment is calibrated according to the manufacturer's instructions. Prepare the subject by cleaning the skin area near the left side of the body near the last rib and upper arm for electrode placement.
+    \item \textbf{Electrode Placement:} Apply one type of electrodes to the prepared skin area.
+    \item \textbf{Measurement:}
+    \begin{enumerate}
+        \item \textbf{Heart Rate Measurement:} Instruct the subject to hold their breath. Measure the heart rate using the MFIA impedance analyzer. Record the data.
+        \item \textbf{Breathing Measurement:} Without altering the electrode placement, measure the subject's breathing using the MFIA impedance analyzer. Record the data.
+        
+    \end{enumerate}
+
+    \item \textbf{Repeat:} Repeat steps 1, 2 and 3 for each type of electrode and each skin area.
+    \item \textbf{Electrode Placement:} Apply one pair of electrodes to chest area and another pair to the upper arm.
+    \item \textbf{Data Transmission:} Utilize the SDRs to measure the data transmission capabilities of the electrodes. Record the data.
+    \item \textbf{Repeat:} Repeat steps 5 and 6 for each type of electrode.
+\end{enumerate}
+
+Data were collected across static conditions to assess each electrode type's performance.
+
+
+
+
+%\subsection{Evaluation Parameters}
+%\notea{Duplicating with Section C...}
+%\begin{itemize}
+%    \item Signal-to-Noise Ratio (SNR)
+%    \item Settling Time
+%    \item Chip Error Rate (CER) for BCC application
 %    \item Movement Artifacts Measurement Methodology
     
 %For the quantification of movement artifacts, particularly in the context of BCC applications, the Chip Error Rate (CER) ratio under passive and active conditions was utilized. The formula for calculating the movement artifacts impact is given by:
@@ -133,119 +182,140 @@ This methodology aims to provide a robust framework for comparing the efficacy o
 %\end{equation}
 %where CER\_active represents the chip error rate under active (movement) conditions, and CER\_passive represents the chip error rate under passive (no movement) conditions. A value greater than 1 indicates an increase in transmission errors due to movement.
 
-\end{itemize}
-
-\subsection{Experimental Setup}
-\notea{Okay, please cleanup the unnecessary text! Experimental setup is explained tree times. It is hard to keep track of what is important and what is not.}
-\section{Experimental Setup}
-
-This study aims to evaluate the performance of different electrode types across \hl{various} biomedical applications, including electrocardiography (ECG), breathing measurement, pulse wave analysis, and Body-Coupled Communication (BCC). The primary performance metrics of interest are the Signal-to-Noise Ratio (SNR), settling time, and the impact of movement artifacts on these measurements. To achieve this, we utilized a \hl{comprehensive} experimental setup involving an MFIA Impedance Analyzer for vital sign measurements and a pair of Software Defined Radios (SDRs) for assessing the quality of data transmission in BCC applications.
-
-\notea{Aforementioned suggests, MFIA and SDRs were used together... Which BioZ scheme was used? A pic would be nice. Which BCC scheme was used. A pic would be nice. \\ Consider describing the setup for BioZ and BCC seperately. Lay out detailed experimental setup, so if necessary others could reproduce your work. What are signal amplitudes?}
-
-\subsection{Equipment and Software}
-
-\subsubsection{MFIA Impedance Analyzer}
-The MFIA Impedance Analyzer, a precision instrument designed by Zurich Instruments, serves as the cornerstone of our experimental setup for measuring bioimpedance signals. With its capability to measure impedance over a wide frequency range and at very high accuracies, it is ideally suited for capturing the subtle variations in bioimpedance associated with ECG \notea{ECG replace with heart activity}, breathing, and pulse wave signals. The analyzer's high precision allows for the detailed characterization of the electrode-skin interface impedance, which is critical for our analysis of settling times and signal quality. \notea{Better put in some references to the documentation and most important technical characteristics. }
-
-\subsubsection{Software Defined Radios (SDRs)}
-A pair of Software Defined Radios (SDRs) is used to evaluate the performance of electrodes in BCC applications. These SDRs, operating in a controlled laboratory environment, simulate the transmission and reception of data across the human body. By varying the transmitted signal's frequency and modulation scheme, we assess the electrodes' efficacy in supporting efficient body-coupled communication. The SDRs enable us to measure the Chip Error Rate (CER), providing a quantitative measure of data transmission quality under different conditions, including the presence of movement artifacts.
-
-\subsubsection{Data Acquisition and Analysis Software}
-Data acquisition and analysis are performed using custom-developed software scripts running on MATLAB and Python. These scripts are designed to interface with the MFIA Impedance Analyzer and SDRs, facilitating the automatic collection, processing, and analysis of the measured signals. The software provides tools for filtering, noise reduction, and signal analysis, allowing for the extraction of SNR values, settling times, and CER metrics from the raw data. \notea{The signal processing and filtering methods should be explained a bit more. Instead describing software, focus on what signals exactly are recorded? What is the measurement acquisition pipeline? What specific techniques are used for signal processing? }
-
-\subsection{Electrode Types Under Test}
-
-The study evaluates four types of electrodes:
-\begin{enumerate}
-    \item Classical Ag/AgCl disposable electrodes,
-    \item Ag/AgCl electrodes on a hydrogel base,
-    \item Custom-made gold-plated copper electrodes on a flexible PCB,
-    \item Custom-made carbon-printed electrodes.
-\end{enumerate}
-\hl{Each electrode type is assessed for its performance in transmitting and receiving bioimpedance signals and its effectiveness in BCC applications.} \notea{How?}
-
-\subsection{Measurement Scenarios}
-
-\subsubsection{Vital Sign Measurements}
-For vital sign measurements, including ECG, breathing, and pulse wave analysis, electrodes are attached to predefined locations on the body, following standard medical protocols. The MFIA Impedance Analyzer, interfaced with the body via these electrodes, \hl{injects a low-amplitude alternating current (AC)} signal and measures the resulting voltage response. \notea{What is the amplitude, frequency?} The analysis of these measurements allows for the determination of SNR and settling times, providing insights into each electrode type's sensitivity and responsiveness.
-
-\subsubsection{Body-Coupled Communication}
-In BCC experiments, the \hl{SDRs are configured} \notea{What are the configuration parameters?} to transmit and receive data signals through the body, using the test electrodes as the interface. The setup mimics real-world BCC applications, with one SDR acting as the transmitter and the other as the receiver. The electrodes' performance is evaluated based on the CER, reflecting the quality of data transmission through the body.
-
-\subsection{Measurement Protocols}
-
-\subsubsection{SNR Measurement}
-SNR measurements are conducted by recording the bioimpedance signals generated during \hl{ECG} \notea{Revise this through the whole article. Variations in bioimpedance are not generated by ECG, but by heart rate activity (muscle contractions, changes in blood flow or something like that)}, breathing, and pulse wave activities. The MFIA Impedance Analyzer captures the signals, with the accompanying software calculating the SNR by comparing the power of the signal of interest to the power of the background noise.
-
-\subsubsection{Settling Time Evaluation}
-The settling time is measured by observing the time required for the bioimpedance signal to stabilize after the initial electrode placement. This metric is crucial for applications requiring rapid setup and immediate signal acquisition, such as emergency medical services or continuous health monitoring.
-
-\subsubsection{Movement Artifacts and CER Analysis}
-To assess the impact of movement artifacts, subjects are instructed to perform a series of predefined movements during the bioimpedance and BCC measurements. The change in SNR and CER before, during, and after movement provides a quantitative measure of each electrode type's susceptibility to movement-induced noise and data transmission errors.
-
-\subsection{Data Collection and Analysis}
-
-Data collection involves capturing bioimpedance signals and BCC data transmission metrics under various conditions, including static (no movement) and dynamic (with movement) scenarios. The collected data undergoes preprocessing to remove artifacts unrelated to the primary signal or induced by external electromagnetic interference. Subsequent analysis focuses on extracting the key performance metrics (SNR, settling time, and CER) for each electrode type and scenario.
-
-By employing this rigorous experimental setup, the study aims to provide a comprehensive evaluation of the performance of different electrode types in bioimpedance measurements and BCC applications. The findings are expected to contribute valuable insights into the selection and optimization of electrodes for biomedical engineering applications, ultimately enhancing the reliability and accuracy of non-invasive monitoring technologies.
+%\end{itemize}
 
 
+%\input{Old_sections/experimental_setup.tex}
 
 \section{Results}
-\subsection{SNR Analysis}
-\subsubsection{ECG Measurement Performance}
+
+In this section, we outline the experimental outcomes from our comparison among Ag/AgCl electrodes, EMS electrodes, and gold-plated electrodes. The evaluation metrics included Signal-to-Noise Ratio (SNR) for both breathing and pulse signals, Settling Time for signal stabilization, and Chip Error Rate (CER) for Body-Coupled Communication (BCC). Instances where signal quality was insufficient for measurement are denoted by "-".
+
+\subsection{SNR (Signal-to-Noise Ratio)}
+
 \begin{itemize}
-    \item Ag/AgCl Disposable Electrodes - 
-    \item EMS Electrodes - 
-    \item Custom-Made Gold-Plated Copper Electrodes - 
-\end{itemize}
-\subsubsection{BPG and BioZ Pneumography Performance}
-\begin{itemize}
-    \item Ag/AgCl Disposable Electrodes - 
-    \item EMS Electrodes - 
-    \item Custom-Made Gold-Plated Copper Electrodes -
+    \item \textbf{Breathing (Upper Arm):} The SNR values for Ag/AgCl and EMS electrodes were 10 and 12, respectively, with gold-plated electrodes at a lower SNR of 5.
+    \item \textbf{Breathing (Chest):} Gold-plated electrodes significantly outperformed with an SNR of 30, against 10 for Ag/AgCl and 15 for EMS electrodes.
+    \item \textbf{Pulse (Upper Arm):} Gold-plated electrodes exhibited a superior SNR of 1, compared to 0.5 for Ag/AgCl electrodes, with EMS electrodes' signal being too poor to measure.
+    \item \textbf{Pulse (Chest):} The SNR for Ag/AgCl electrodes was slightly better at 1, versus 0.5 for gold-plated electrodes. The EMS electrodes' performance could not be measured.
 \end{itemize}
 
+\subsection{Settling Time}
 
-\subsection{Settling Time Observations}
-
-\subsubsection{ECG Measurement Performance}
 \begin{itemize}
-    \item Ag/AgCl Disposable Electrodes - 
-    \item EMS Electrodes - 
-    \item Custom-Made Gold-Plated Copper Electrodes -
-\end{itemize}
-\subsubsection{BPG and BioZ Pneumography Performance}
-\begin{itemize}
-    \item Ag/AgCl Disposable Electrodes - 
-    \item EMS Electrodes - 
-    \item Custom-Made Gold-Plated Copper Electrodes -
+    \item \textbf{Breathing (Upper Arm):} EMS electrodes demonstrated an instantaneous settling time (0 seconds), followed by gold-plated (10 seconds) and Ag/AgCl electrodes (30 seconds).
+    \item \textbf{Breathing (Chest):} Gold-plated electrodes achieved the fastest settling time at 0 seconds, Ag/AgCl electrodes followed at 5 seconds, and EMS electrodes lagged at 20 seconds.
+    \item \textbf{Pulse (Upper Arm):} Both Ag/AgCl and gold-plated electrodes registered a settling time of 2 seconds. EMS electrodes' quality was unmeasurable.
+    \item \textbf{Pulse (Chest):} Settling time for gold-plated electrodes was recorded at 5 seconds, outperforming Ag/AgCl electrodes which stood at 7 seconds. EMS electrodes' signal was again unmeasurable.
 \end{itemize}
 
-\subsection{Chip Error Rate (CER) Analysis}
-\begin{itemize}
-    \item Ag/AgCl Disposable Electrodes - 3.3\%
-    \item EMS Electrodes - 5.2\%
-    \item Custom-Made Gold-Plated Copper Electrodes - 5.5\%
-\end{itemize}
+\subsection{CER (Chip Error Rate) in BCC}
+
+The Chip Error Rate for Body-Coupled Communication was found to be lowest for Ag/AgCl electrodes at 3.30\%, followed by EMS at 5.20\%, and gold-plated electrodes at 5.50\%.
+
+These experimental insights depict a nuanced landscape of electrode performance, where no single type consistently excels across all metrics. Notably, gold-plated electrodes demonstrate superior capability in specific scenarios, particularly in SNR for chest breathing signals and the settling time for breathing signals, highlighting their application-specific advantages. However, their performance varied across the board, emphasizing the importance of tailored electrode choice based on precise application needs. The EMS electrodes faced challenges in reliable signal acquisition for some metrics, indicating their limitations in the tested scenarios.
+
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+        Metric & AgAgCl & EMS & Gold \\ \hline
+        SNR - Breathing - Upper Arm & 10 & 12 & 5 \\ \hline
+        SNR - Breathing - Chest & 10 & 15 & 30 \\ \hline
+        Settling Time - Breathing - Upper Arm & 30s & 0s & 10s \\ \hline
+        Settling Time - Breathing - Chest & 5s & 20s & 0s \\ \hline
+        SNR - Pulse - Upper Arm & 0.5 & - & 1 \\ \hline
+        SNR - Pulse - Chest & 1 & - & 0.5 \\ \hline
+        Settling Time - Pulse - Upper Arm & 2s & - & 2s \\ \hline
+        Settling Time - Pulse - Chest & 7s & - & 5s \\ \hline
+        CER - BCC & 3.30\% & 5.20\% & 5.50\% \\ \hline
+    \end{tabular}
+\end{table}
 %\subsection{Movement Artifacts Evaluation}
 
 \section{Discussion}
-\subsection{Comparative Performance Analysis}
-\subsubsection{ECG Measurement Performance}
-\subsubsection{BPG and BioZ Pneumography Performance}
-\subsubsection{BCC Application Performance}
-\subsection{Movement Artifacts Across Scenarios}
+
+\subsection{Pulse Measurement Scenario Analysis}
+
+The pulse measurement scenario offers insightful observations into the comparative performance of Ag/AgCl electrodes, EMS electrodes, and gold-plated electrodes. This analysis is pivotal for understanding the implications of electrode choice in applications requiring precise cardiovascular monitoring.
+
+\begin{itemize}
+    \item \textbf{Signal-to-Noise Ratio (SNR):} The SNR is a critical factor in assessing the quality of the pulse signal captured by the electrodes. Our results indicate that gold-plated electrodes tend to perform better on the upper arm with an SNR of 1, compared to 0.5 for Ag/AgCl electrodes. This suggests that gold-plated electrodes may provide clearer signal quality in upper arm pulse measurements, which is essential for accurate heart rate monitoring. However, in chest measurements, Ag/AgCl electrodes slightly outperformed gold-plated ones (SNR of 1 vs. 0.5), indicating that electrode placement and the specific monitoring site play a significant role in signal clarity. The absence of data for EMS electrodes in this scenario due to unmeasurable signal quality underscores the challenges that certain electrode types may face in specific physiological monitoring contexts.
+
+    \item \textbf{Settling Time:} The rapid stabilization of the signal, as denoted by the settling time, is crucial for timely and efficient pulse monitoring. Both Ag/AgCl and gold-plated electrodes showed a settling time of 2 seconds on the upper arm, indicating a quick adaptation to the physiological signal. This quick settling time is advantageous in scenarios where immediate signal acquisition is necessary, such as in acute care settings. For chest measurements, gold-plated electrodes demonstrated a slightly better settling time (5 seconds) compared to Ag/AgCl electrodes (7 seconds), suggesting that for chest-based pulse measurements, gold-plated electrodes might be slightly more efficient in achieving signal stability.
+
+    \item \textbf{Application Implications:} The choice between Ag/AgCl and gold-plated electrodes for pulse measurements should consider both the monitoring location and the specific requirements of the application. For upper arm measurements where higher SNR is a priority, gold-plated electrodes appear to offer an advantage. Conversely, for chest measurements, the choice may depend on the balance between the need for slightly higher SNR (favoring Ag/AgCl electrodes) and faster settling times (favoring gold-plated electrodes). The unavailability of data for EMS electrodes in pulse measurements suggests a limitation in their utility for reliable cardiovascular monitoring, highlighting the need for further research into electrode designs that can accommodate a broader range of measurement scenarios.
+\end{itemize}
+
+Overall, the pulse measurement scenario underscores the nuanced trade-offs between electrode types, with no single electrode type emerging as universally superior across all metrics. This analysis illustrates the importance of context in electrode selection, where specific application needs and measurement site characteristics should guide the choice of electrodes. Further research into optimizing electrode materials and designs for specific physiological signals and monitoring locations could significantly enhance the efficacy and reliability of biomedical monitoring technologies.
+
+This section delves into the comparative analysis of BioZ pneumography measurements, focusing on the performance of Ag/AgCl electrodes, EMS electrodes, and gold-plated electrodes across different scenarios. Pneumography, the process of recording breathing patterns, is crucial in both clinical settings and wearable health technology. The efficacy of this measurement largely depends on the quality of the electrodes used for signal acquisition.
+
+\subsection{BioZ Pneumography Measurement Analysis}
+
+The signal-to-noise ratio (SNR) and settling time serve as critical parameters in evaluating the performance of electrodes in BioZ pneumography measurements. These metrics directly impact the reliability and accuracy of respiratory rate monitoring, a vital sign that is indicative of numerous health conditions.
+
+\subsubsection{Signal-to-Noise Ratio (SNR)}
+
+\textbf{Upper Arm vs. Chest Measurements:} The experimental results highlight a stark difference in performance among the electrode types when used for pneumography. Notably, gold-plated electrodes exhibited superior SNR in chest measurements with a value of 30, significantly outperforming both Ag/AgCl and EMS electrodes. This suggests that gold-plated electrodes are more adept at capturing the subtle changes in bioimpedance caused by breathing at the chest level, attributed to their enhanced conductivity and biocompatibility. However, in the upper arm scenario, the performance of gold-plated electrodes was the lowest with an SNR of 5, which could be due to the reduced impact of thoracic movement on bioimpedance at this location.
+
+\textbf{Implications for Clinical and Wearable Applications:} The high SNR of gold-plated electrodes in chest measurements underlines their potential in applications requiring high precision in respiratory rate monitoring, such as in patients with respiratory disorders or for sleep quality studies. Conversely, the lower SNR observed in upper arm measurements across all electrode types suggests a potential limitation in scenarios where chest placement is not feasible.
+
+\subsubsection{Settling Time}
+
+\textbf{Rapid Signal Acquisition:} The settling time—how quickly a stable signal is obtained—was found to be minimal for gold-plated electrodes in chest measurements (0 seconds), indicating their suitability for scenarios requiring immediate data collection, such as emergency medical services or real-time health monitoring systems.
+
+\textbf{Upper Arm Measurements:} In contrast, for upper arm measurements, EMS electrodes demonstrated an immediate settling time of 0 seconds, suggesting that despite their lower SNR, they may offer advantages in scenarios where rapid setup and less precise respiratory monitoring are acceptable.
+
+\subsection{Overall Evaluation}
+
+The evaluation of BioZ pneumography measurements underscores the importance of selecting the appropriate electrode type based on the specific requirements of the application. Gold-plated electrodes, with their exceptional performance in chest measurements, emerge as a preferable choice for detailed respiratory analysis. However, the context of the measurement, including the location (chest vs. upper arm) and the need for rapid signal acquisition, plays a crucial role in determining the most suitable electrode type.
+
+In conclusion, our analysis reveals the nuanced trade-offs between electrode types in BioZ pneumography measurements. Future research should further explore these dynamics, potentially leading to the development of specialized electrodes tailored to specific measurement scenarios.
+
+\subsection{BCC Application Analysis}
+
+In evaluating the efficacy of electrodes for Body-Coupled Communication (BCC), Chip Error Rate (CER) serves as a pivotal metric. BCC leverages the human body as a medium for signal transmission, a novel approach that underpins many emerging applications in health monitoring and data transfer. The CER, which measures the rate of errors in the communication channel, directly impacts the reliability and efficiency of these applications.
+
+\subsubsection{Chip Error Rate (CER)}
+
+\textbf{Comparative Analysis:} The experimental findings indicated that Ag/AgCl electrodes exhibited the lowest CER at 3.30\%, followed by EMS electrodes at 5.20\%, and gold-plated electrodes at 5.50\%. This suggests that Ag/AgCl electrodes provide a more stable and reliable channel for body-coupled communication, likely due to their effective impedance matching with human skin, which is critical for minimizing signal loss and reflections.
+
+\textbf{Implications for BCC Applications:} The lower CER of Ag/AgCl electrodes highlights their potential in applications where high data integrity and minimal transmission errors are paramount. These scenarios include wearable health technologies that rely on the seamless exchange of physiological data between devices or remote monitoring systems where accuracy and reliability are crucial.
+
+However, the relatively higher CER observed with gold-plated and EMS electrodes does not necessarily preclude their use in BCC applications. The selection of electrodes must also consider factors such as biocompatibility, durability, and the specific communication requirements of the application. For instance, gold-plated electrodes, despite their higher CER, might still be preferred in long-term monitoring applications due to their superior biocompatibility and resistance to corrosion. 
+
+\subsubsection{Strategic Considerations for Electrode Selection in BCC}
+
+The nuanced performance differences among electrode types in BCC applications underscore the importance of strategic electrode selection. Developers and researchers should weigh the trade-offs between CER, biocompatibility, durability, and economic factors to determine the most suitable electrode type for their specific application. Moreover, the evolving landscape of BCC technology may necessitate ongoing evaluation as new electrode materials and designs emerge. As to BCC technology relies on long-term wearability and user comfort, these factors are equally important in electrode selection. In glance of the results and very insignificant diferences in CERs, the choice of electrode type for BCC applications may fall to reusable EMS and gold-plated electrodes, as they offer a balance between performance and durability.
+
+In conclusion, our analysis of BCC applications reveals a complex interplay between electrode material properties and communication performance. While Ag/AgCl electrodes currently offer the lowest CER, the broader context of application requirements must guide the final electrode selection. Future advancements in electrode technology and BCC methodologies hold the promise of further enhancing the efficacy of body-coupled communication in healthcare and beyond.
+%\subsection{Movement Artifacts Across Scenarios}
 
 \section{Conclusion}
+
+This study embarked on a comprehensive evaluation of three types of electrodes - Ag/AgCl, EMS, and gold-plated - across a range of biomedical applications, including bioimpedance measurements and Body-Coupled Communication (BCC). Through rigorous testing, we have derived critical insights into the performance metrics of these electrodes, notably in terms of Signal-to-Noise Ratio (SNR), Settling Time, and Chip Error Rate (CER).
+
 \subsection{Summary of Findings}
-\subsection{Implications for Electrode Selection in BioZ and BCC Applications}
+Our results indicate that for short term measurements the most suitable electrodes are the Classical Ag/AgCl Disposable Electrodes. However, for long term measurements, the gold-plated electrodes shows that their benifits are much valuable than inconvinience of custom electrode manufacturing. The performance of EMS electrodes varied, showing promise in certain scenarios but limited by unmeasurable signal quality in pulse measurements.
+
+
 \subsection{Future Research Directions}
+Future research should focus on several key areas:
+\begin{enumerate}
+    \item Developing electrode materials and designs that offer a balanced performance across a wider range of biomedical applications.
+    \item Exploring the impact of electrode size, shape, and placement on measurement accuracy and user comfort in bioimpedance and BCC applications.
+    \item Investigating the long-term durability and biocompatibility of electrodes, particularly for wearable devices intended for continuous health monitoring.
+    \item Advancing BCC technology to improve data transmission efficiency, reduce CER, and expand its applicability in next-generation wearable health systems.
+    \item Performe same tests with unprepared skin to see how the results differ.
+\end{enumerate}
+
+In conclusion, this study provides valuable insights into the comparative performance of different electrode types in bioimpedance measurements and BCC applications. By highlighting the strengths and limitations of Ag/AgCl, EMS, and gold-plated electrodes, we contribute to the informed selection of electrode materials in the development of advanced biomedical devices. The pursuit of optimized electrode solutions remains a critical endeavor as we advance towards more accurate, reliable, and user-friendly non-invasive diagnostic and communication technologies in healthcare.
+
+
 
 % Add the References section as per your formatting guideline.
-\section*{References}
-\notea{Bibliography needs fixing!}
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,bibliography.bib}
