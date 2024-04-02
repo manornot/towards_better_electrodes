@@ -15,31 +15,30 @@
 \begin{document}
 
 \title{Electrodes for BioImpedance and Body-Coupled Communication\\
-
 \thanks{The work was carried out as part of SUSTRONICS
 project that is co-funded by the European Union under grant
 agreement 101112109.}
 }
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Juris Ormanis}
-\IEEEauthorblockA{\textit{Cyber-Physical Systems Laboratory} \\
+\IEEEauthorblockA{
 \textit{Institute of Electronics and Computer Science}\\
 Riga, Latvia \\
 juris.ormanis@edi.lv}
 \and
 \IEEEauthorblockN{2\textsuperscript{nd} Anastasija Sevcenko}
-\IEEEauthorblockA{\textit{Cyber-Physical Systems Laboratory} \\
+\IEEEauthorblockA{
 \textit{Institute of Electronics and Computer Science}\\
 Riga, Latvia }
 \and
 \IEEEauthorblockN{3\textsuperscript{rd} Vladislavs Medvedevs}
-\IEEEauthorblockA{\textit{Cyber-Physical Systems Laboratory} \\
+\IEEEauthorblockA{
 \textit{Institute of Electronics and Computer Science}\\
 Riga, Latvia}
 \and
 
 \IEEEauthorblockN{4\textsuperscript{th} Krisjanis Nesenbergs}
-\IEEEauthorblockA{\textit{Cyber-Physical Systems Laboratory} \\
+\IEEEauthorblockA{
 \textit{Institute of Electronics and Computer Science}\\
 Riga, Latvia \\
 email address or ORCID}
@@ -59,7 +58,9 @@ Riga, Latvia }
 \maketitle
 
 \begin{abstract}
-    Based on the comprehensive evaluation of electrodes for BioImpedance (BioZ) and Body-Coupled Communication (BCC) within biomedical applications, this study investigates the performance metrics—Signal-to-Noise Ratio (SNR), Settling Time, and Chip Error Rate (CER)—of Ag/AgCl, EMS, and gold-plated electrodes. By rigorously testing across scenarios for heart rate monitoring, breathing measurement, and data transmission through the human body, the research offers nuanced insights into electrode suitability. Key findings highlight the contextual performance advantages of each electrode type, laying a foundation for future innovations in non-invasive diagnostics and wearable technology. This contributes significantly to the electrode material selection, emphasizing the balance between application-specific requirements and user comfort
+    In the pursuit of enhancing healthcare through biomedical engineering and wearable technology, our research conducts a thorough investigation into the efficacy of different electrodes in BioImpedance (BioZ) and Body-Coupled Communication (BCC) applications. We meticulously analyze Ag/AgCl, EMS, and gold-plated electrodes across a variety of metrics such as Signal-to-Noise Ratio (SNR), Settling Time, and Chip Error Rate (CER). Through a series of experiments tailored to assess their performance in monitoring heart rate, breathing, and facilitating data transmission through the human body, we uncover the specific contexts in which each electrode type excels.
+
+Our study not only highlights the critical role of electrode selection in advancing non-invasive diagnostic methods and wearable technologies but also emphasizes the necessity of achieving a delicate balance between technical performance and user comfort. By offering a detailed comparison of electrode materials and their respective advantages for particular health monitoring applications, this research significantly contributes to the field. It aims to inform future developments in electrode design, pushing the boundaries of what is possible in healthcare monitoring and communication technologies. Through this work, we envision a future where enhanced diagnostic capabilities and innovative communication methods through the human body are not only possible but are also widely accessible, marking a significant leap forward in patient care and health management.
 \end{abstract}
 
 
@@ -81,7 +82,7 @@ This study investigates the performance of four distinct electrode types in bioi
 
 Each electrode type's construction and material properties uniquely contribute to its performance in specific biomedical applications, from standard ECG measurements to innovative BCC functionalities. 
 
-%\notea{Also describe size and shapes of the electrodes.}
+\notea{Also describe size and shapes of the electrodes.}
 
 \subsection{Measurement Scenarios}
 We focused on three primary scenarios to evaluate electrode performance:
@@ -101,20 +102,20 @@ The Body Coupled Communication (BCC) technology presents a groundbreaking use-ca
 This methodology aims to provide a robust framework for comparing the efficacy of various electrode types in biomedical applications, contributing to the development of more reliable, efficient, and user-friendly non-invasive diagnostic and communication technologies. 
 
 The study quantitatively assesses electrode performance using the following metrics:
-\begin{itemize}
-    \item \textbf{Signal-to-Noise Ratio (SNR):} Essential for determining the clarity and quality of bioimpedance signals and BCC data transmission.
+
+ \textbf{Signal-to-Noise Ratio (SNR):} Essential for determining the clarity and quality of bioimpedance signals and BCC data transmission.
     The SNR is calculated as the ratio of signal amplitude (averaging signal over time) to the standard deviation of the background noise, providing a quantitative measure of the signal's fidelity and integrity. A higher SNR indicates a clearer, more reliable signal, essential for accurate data analysis and interpretation.
     
-    \item \textbf{Settling Time:} Measures the time electrodes take to stabilize their signal upon placement, indicating their readiness for immediate data acquisition.
+\textbf{Settling Time:} Measures the time electrodes take to stabilize their signal upon placement, indicating their readiness for immediate data acquisition.
     
     The settling time refers to the duration needed for a signal to stabilize, with variations no more than 5\% during one cycle of changes in a person's vital signs. This measurement is especially important for situations that demand quick preparation and instant signal capture, such as in emergency medical scenarios or ongoing health monitoring.
     
-    \item \textbf{Chip Error Rate (CER) for BCC Application:} Assesses the reliability of data transmission through the body, reflecting the efficiency of electrode-based communication systems.
+\textbf{Chip Error Rate (CER) for BCC Application:} Assesses the reliability of data transmission through the body, reflecting the efficiency of electrode-based communication systems.
     
     The CER is calculated as the ratio of the number of bit errors to the total number of bits transmitted, providing a quantitative measure of the data transmission quality. A lower CER indicates a more reliable communication channel, essential for ensuring the accuracy and integrity of transmitted data in BCC applications.
     
     %\item \textbf{Movement Artifacts:} Investigated through the ratio of CER under active (with movement) and passive (no movement) conditions to quantify the impact of physical activity on data integrity.
-\end{itemize}
+
 
 \subsection{Experimental Setup}
 \begin{figure}[!ht]
@@ -194,21 +195,25 @@ In this section, we outline the experimental outcomes from our comparison among 
 
 \subsection{SNR (Signal-to-Noise Ratio)}
 
-\begin{itemize}
-    \item \textbf{Breathing (Upper Arm):} The SNR values for Ag/AgCl and EMS electrodes were 10 and 12, respectively, with gold-plated electrodes at a lower SNR of 5.
-    \item \textbf{Breathing (Chest):} Gold-plated electrodes significantly outperformed with an SNR of 30, against 10 for Ag/AgCl and 15 for EMS electrodes.
-    \item \textbf{Pulse (Upper Arm):} Gold-plated electrodes exhibited a superior SNR of 1, compared to 0.5 for Ag/AgCl electrodes, with EMS electrodes' signal being too poor to measure.
-    \item \textbf{Pulse (Chest):} The SNR for Ag/AgCl electrodes was slightly better at 1, versus 0.5 for gold-plated electrodes. The EMS electrodes' performance could not be measured.
-\end{itemize}
+ \textbf{Breathing (Upper Arm):} The SNR values for Ag/AgCl and EMS electrodes were 10 and 12, respectively, with gold-plated electrodes at a lower SNR of 5.
+ 
+\textbf{Breathing (Chest):} Gold-plated electrodes significantly outperformed with an SNR of 30, against 10 for Ag/AgCl and 15 for EMS electrodes.
+
+ \textbf{Pulse (Upper Arm):} Gold-plated electrodes exhibited a superior SNR of 1, compared to 0.5 for Ag/AgCl electrodes, with EMS electrodes' signal being too poor to measure.
+
+ \textbf{Pulse (Chest):} The SNR for Ag/AgCl electrodes was slightly better at 1, versus 0.5 for gold-plated electrodes. The EMS electrodes' performance could not be measured.
+
 
 \subsection{Settling Time}
 
-\begin{itemize}
-    \item \textbf{Breathing (Upper Arm):} EMS electrodes demonstrated an instantaneous settling time (0 seconds), followed by gold-plated (10 seconds) and Ag/AgCl electrodes (30 seconds).
-    \item \textbf{Breathing (Chest):} Gold-plated electrodes achieved the fastest settling time at 0 seconds, Ag/AgCl electrodes followed at 5 seconds, and EMS electrodes lagged at 20 seconds.
-    \item \textbf{Pulse (Upper Arm):} Both Ag/AgCl and gold-plated electrodes registered a settling time of 2 seconds. EMS electrodes' quality was unmeasurable.
-    \item \textbf{Pulse (Chest):} Settling time for gold-plated electrodes was recorded at 5 seconds, outperforming Ag/AgCl electrodes which stood at 7 seconds. EMS electrodes' signal was again unmeasurable.
-\end{itemize}
+ \textbf{Breathing (Upper Arm):} EMS electrodes demonstrated an instantaneous settling time (0 seconds), followed by gold-plated (10 seconds) and Ag/AgCl electrodes (30 seconds).
+ 
+    \textbf{Breathing (Chest):} Gold-plated electrodes achieved the fastest settling time at 0 seconds, Ag/AgCl electrodes followed at 5 seconds, and EMS electrodes lagged at 20 seconds.
+ 
+    \textbf{Pulse (Upper Arm):} Both Ag/AgCl and gold-plated electrodes registered a settling time of 2 seconds. EMS electrodes' quality was unmeasurable.
+
+ \textbf{Pulse (Chest):} Settling time for gold-plated electrodes was recorded at 5 seconds, outperforming Ag/AgCl electrodes which stood at 7 seconds. EMS electrodes' signal was again unmeasurable.
+
 
 \subsection{CER (Chip Error Rate) in BCC}
 
@@ -241,13 +246,12 @@ These experimental insights depict a nuanced landscape of electrode performance,
 
 The pulse measurement scenario offers insightful observations into the comparative performance of Ag/AgCl electrodes, EMS electrodes, and gold-plated electrodes. This analysis is pivotal for understanding the implications of electrode choice in applications requiring precise cardiovascular monitoring.
 
-\begin{itemize}
-    \item \textbf{Signal-to-Noise Ratio (SNR):} The SNR is a critical factor in assessing the quality of the pulse signal captured by the electrodes. Our results indicate that gold-plated electrodes tend to perform better on the upper arm with an SNR of 1, compared to 0.5 for Ag/AgCl electrodes. This suggests that gold-plated electrodes may provide clearer signal quality in upper arm pulse measurements, which is essential for accurate heart rate monitoring. However, in chest measurements, Ag/AgCl electrodes slightly outperformed gold-plated ones (SNR of 1 vs. 0.5), indicating that electrode placement and the specific monitoring site play a significant role in signal clarity. The absence of data for EMS electrodes in this scenario due to unmeasurable signal quality underscores the challenges that certain electrode types may face in specific physiological monitoring contexts.
+\textbf{Signal-to-Noise Ratio (SNR):} The SNR is a critical factor in assessing the quality of the pulse signal captured by the electrodes. Our results indicate that gold-plated electrodes tend to perform better on the upper arm with an SNR of 1, compared to 0.5 for Ag/AgCl electrodes. This suggests that gold-plated electrodes may provide clearer signal quality in upper arm pulse measurements, which is essential for accurate heart rate monitoring. However, in chest measurements, Ag/AgCl electrodes slightly outperformed gold-plated ones (SNR of 1 vs. 0.5), indicating that electrode placement and the specific monitoring site play a significant role in signal clarity. The absence of data for EMS electrodes in this scenario due to unmeasurable signal quality underscores the challenges that certain electrode types may face in specific physiological monitoring contexts.
 
-    \item \textbf{Settling Time:} The rapid stabilization of the signal, as denoted by the settling time, is crucial for timely and efficient pulse monitoring. Both Ag/AgCl and gold-plated electrodes showed a settling time of 2 seconds on the upper arm, indicating a quick adaptation to the physiological signal. This quick settling time is advantageous in scenarios where immediate signal acquisition is necessary, such as in acute care settings. For chest measurements, gold-plated electrodes demonstrated a slightly better settling time (5 seconds) compared to Ag/AgCl electrodes (7 seconds), suggesting that for chest-based pulse measurements, gold-plated electrodes might be slightly more efficient in achieving signal stability.
+\textbf{Settling Time:} The rapid stabilization of the signal, as denoted by the settling time, is crucial for timely and efficient pulse monitoring. Both Ag/AgCl and gold-plated electrodes showed a settling time of 2 seconds on the upper arm, indicating a quick adaptation to the physiological signal. This quick settling time is advantageous in scenarios where immediate signal acquisition is necessary, such as in acute care settings. For chest measurements, gold-plated electrodes demonstrated a slightly better settling time (5 seconds) compared to Ag/AgCl electrodes (7 seconds), suggesting that for chest-based pulse measurements, gold-plated electrodes might be slightly more efficient in achieving signal stability.
 
-    \item \textbf{Application Implications:} The choice between Ag/AgCl and gold-plated electrodes for pulse measurements should consider both the monitoring location and the specific requirements of the application. For upper arm measurements where higher SNR is a priority, gold-plated electrodes appear to offer an advantage. Conversely, for chest measurements, the choice may depend on the balance between the need for slightly higher SNR (favoring Ag/AgCl electrodes) and faster settling times (favoring gold-plated electrodes). The unavailability of data for EMS electrodes in pulse measurements suggests a limitation in their utility for reliable cardiovascular monitoring, highlighting the need for further research into electrode designs that can accommodate a broader range of measurement scenarios.
-\end{itemize}
+\textbf{Application Implications:} The choice between Ag/AgCl and gold-plated electrodes for pulse measurements should consider both the monitoring location and the specific requirements of the application. For upper arm measurements where higher SNR is a priority, gold-plated electrodes appear to offer an advantage. Conversely, for chest measurements, the choice may depend on the balance between the need for slightly higher SNR (favoring Ag/AgCl electrodes) and faster settling times (favoring gold-plated electrodes). The unavailability of data for EMS electrodes in pulse measurements suggests a limitation in their utility for reliable cardiovascular monitoring, highlighting the need for further research into electrode designs that can accommodate a broader range of measurement scenarios.
+
 
 Overall, the pulse measurement scenario underscores the nuanced trade-offs between electrode types, with no single electrode type emerging as universally superior across all metrics. This analysis illustrates the importance of context in electrode selection, where specific application needs and measurement site characteristics should guide the choice of electrodes. Further research into optimizing electrode materials and designs for specific physiological signals and monitoring locations could significantly enhance the efficacy and reliability of biomedical monitoring technologies.
 
